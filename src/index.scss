@@ -1,0 +1,195 @@
+$MainColor: #007662;
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+
+@font-face {
+  font-family: "yg-jalnan";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "EF_watermelonSalad";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-EF@1.0/EF_watermelonSalad.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@mixin flex($direction: row, $justify: center, $align: center, $wrap: wrap) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.section-wrap {
+  width: 100%;
+  height: 100%;
+  max-width: 1240px;
+  //   background-color: #bbae98;
+  margin: 0 auto;
+  margin-top: 84px;
+  position: relative;
+}
+
+.section {
+  border: 1px solid red;
+  width: 100vw;
+  height: 100vh;
+  /* 각 섹션 시작점에서 스냅 */
+}
+
+.intro {
+  background-color: #ffeccb;
+  position: relative;
+
+  span {
+    display: block;
+  }
+
+  &__bg {
+    box-sizing: border-box;
+    position: absolute;
+    width: 90%;
+    height: 90vh;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 555px;
+    background-color: #ffc570;
+    border: 20px double #fff;
+  }
+
+  &__title {
+    @include flex($wrap: no-wrap);
+    gap: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__line {
+    width: 8px;
+    height: 180px;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+
+  &__left {
+    color: $MainColor;
+    &--small {
+      text-align: right;
+      font-family: "EF_watermelonSalad";
+      font-size: 28px;
+    }
+
+    &--large {
+      font-size: 120px;
+      font-family: "yg-jalnan";
+    }
+  }
+
+  &__right {
+    &--large {
+      font-size: 80px;
+      font-family: "yg-jalnan";
+      color: #fff;
+    }
+  }
+}
+
+.about {
+
+//   overflow-y: hidden;
+  .section-wrap.about {
+    position: relative !important;
+    height: 3526px !important;
+    border:1px solid green;
+  }
+
+  height: auto;
+  &__title {
+    font-size: 62px;
+    font-weight: 600;
+  }
+
+  &__text {
+    // position: fixed;
+    border: 1px solid red;
+    width: 100%;
+    height: 600px;
+    @include flex($direction: column, $align: center);
+    gap: 22px;
+    // margin-top: 240px;
+    left: 50%;
+    top: 50%;
+ 
+  }
+
+  &__block {
+    @include flex($direction: column, $align: center);
+    gap: 6px;
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 32px;
+    position: relative;
+
+    &--block1 {
+      padding-left: 40px;
+    }
+
+    &--block2 {
+      padding-left: 80px;
+    }
+
+    &--block3 {
+      padding-left: 32px;
+    }
+
+    &--p1 {
+      // transform: translate3d(1660px, 0, 0);
+      transition: transform 0.5s ease;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    font-size: 46px;
+    line-height: 0.5;
+    transition: transform 0.5s ease;
+
+    &--1 {
+      top: 0;
+      right: -58px;
+    }
+
+    &--2 {
+      top: 0;
+      left: 18px;
+    }
+
+    &--3 {
+      top: 0;
+      right: -58px;
+    }
+  }
+
+  &__line {
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    transition: transform 0.5s ease;
+  }
+
+  
+}
+
+
